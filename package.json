@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc -w",
-    "link-cli": "pnpm --global unlink practice-cli && pnpm --global link"
+    "link-cli": "pnpm --global unlink practice-cli && chmod +x ./dist/index.js && pnpm --global link"
   },
   "keywords": [],
   "author": "Nata Nael",

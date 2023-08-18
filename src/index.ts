@@ -13,9 +13,21 @@ program
 
 program
   .argument("<string>", "string to log")
-  .action((message: string) => {
-    console.log(`Hello ${message}`);
-  })
+  .option("-c, --capitalize", "Capitalize the message")
+  .action(
+    (
+      message: string,
+      opts: {
+        capitalize?: boolean;
+      }
+    ) => {
+      if (opts.capitalize) {
+        console.log(`Hello ${message.toUpperCase()}`);
+      } else {
+        console.log(`Hello ${message}`);
+      }
+    }
+  )
   .description("This action will say hello");
 
 program
